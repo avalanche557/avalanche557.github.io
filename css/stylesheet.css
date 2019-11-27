@@ -235,7 +235,7 @@ a:hover{
 
 
 #project1:hover:after {
-    content:"\A \A BlueWave \A A Distributed Workflow Engine \A \A Learn More";
+    content:"\A \A BlueWave \A A Distributed Workflow Engine \A";
     white-space: pre; 
     color: white;
     display: block;
@@ -269,7 +269,7 @@ a:hover{
 }
 
 #project2:hover:after {
-    content:"\A \A  GitHub Search \A Search project or User on GitHub \A \A Learn More";
+    content:"\A \A  GitHub Search \A Search project or User on GitHub \A";
     white-space: pre; 
     color: white;
     display: block;
@@ -304,7 +304,7 @@ a:hover{
 }
 
 #project3:hover:after {
-    content:"\A \A  Hospital Managenent System \A Managenent your appointments \A from one app\A \A Learn More";
+    content:"\A \A  Note App \A App where you can add task \A and keep track of it \A";
     white-space: pre; 
     color: white;
     display: block;
