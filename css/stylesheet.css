@@ -4,9 +4,40 @@ body{
     padding:0;
     max-width: 100%;
     overflow-x: hidden; 
-
-
 }
+
+.masonry-container {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+      
+    -webkit-column-gap: 15px;
+    -moz-column-gap: 15px;
+    column-gap: 15px;
+  }
+  
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .masonry-item img {
+    display:block;
+    width: 100%;
+  }
+  
+  /* Just for decoration: */
+  .masonry-item span {
+    font-family: sans-serif;
+    display:block;
+    padding:10px;
+  }
+  
+  .masonry-item {
+    margin-bottom: 15px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+  }
 
 p{
     margin: 0;
@@ -22,6 +53,23 @@ a:hover{
     text-decoration: none;
     color: teal;
     transition: all .5s;
+}
+
+.instagram_id{
+    margin-bottom: 20px;
+}
+
+.instagram_id_div {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+
+.instagram_id_div:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 1;
 }
 
 .header{
@@ -56,17 +104,23 @@ a:hover{
     max-width: 100%;
     margin: auto;
 }
+.about_me_row {
+    width: 80%;
+    max-width: 100%;
+    align-self: center;
+    margin-top: 30px;
+}
 .col-sm-6{
     margin: auto;
 }
 .about , .project{
     margin: auto;
-    text-align: center;
     margin-top: 40px;
 
 }
 
 .about_tile, .project_title{
+    text-align: center;
     font-size: 3vw;
 
 
@@ -86,6 +140,11 @@ a:hover{
     border-top: 5px solid;
 }
 
+.skill_hr{
+    width: 4vw;
+    border-top: 5px solid;
+}
+
 .hexagon {
     width: 100px; 
     height: 100px;
@@ -95,9 +154,121 @@ a:hover{
 
 
   }
-  
- 
+.skill_name{
+    border: 0.5px solid rgb(50, 165, 165);
+    background-color: rgb(50, 165, 165);
+    padding: 5px 10px 5px 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px #aaaaaa;
+    
+}
 
+.skills_row_one {
+    margin-left: 200px;
+    margin-right: 150px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.skills_row_two {
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 250px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skills_row_three{
+    margin-top: 20px;
+    margin-left: 350px;
+    margin-right: 300px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project_row{
+    background-color: #f5f5f5;
+    margin-top: 100px;
+    padding: 10px 20px 40px 20px;
+}
+
+.project_container{
+    display: flex;
+    flex-direction: row;
+}
+ 
+.book {
+    width:300px;
+    height:300px;
+    background:#f5f5f5;
+    position:relative;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.info {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    background: #f5f5f5;
+    display:none;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.info_inner {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+}
+.book .image {
+    text-align:center;
+    position:relative;
+}
+.book:hover .info{
+    display:block;
+}
+.project_header {
+    font-size: 24px;
+    font-weight: 500;
+}
+.project_language {
+    font-size: 14px;
+    color: #E31B6D;
+    letter-spacing: 1px;
+}
+
+.learn_more_button{
+    margin-top: 30px;
+    border: 2px solid #E31B6D;
+    padding: 10px 15px 10px 15px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.learn_more_button:hover{
+    margin-top: 30px;
+    border: 2px solid #E31B6D;
+    padding: 10px 15px 10px 15px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background-color: #E31B6D;
+    color: white;
+}
+
+.project_img{
+    height: 300px; 
+    width: 300px;
+    object-fit: fill;
+}
 .row{
       margin-top: 30px;
       margin-left: 20px;
@@ -123,19 +294,21 @@ a:hover{
 }
 
 .profile_pic{
+    margin-top: 5%;
     text-align: center;
+
 }
 
 
 .dp{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
     border-radius: 50%;
 }
 
 .about_me1{
     margin-top: 10px;
-    margin-bottom: 5px;
     font-size: 2.5vw;
     color: gray;
 }
@@ -170,8 +343,27 @@ a:hover{
     padding: 0;
     opacity: 1;
 }
+.resume_button{
+    padding-top: 30px;
+    font-size: 20px;
+    opacity: 0.6;
+}
 
-
+.download_icon {
+    margin-top: 10px;
+    height: 32px;
+    width: 32px;
+}
+.resume_download{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+.resume_download:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
 
 .bar {
     color: #666;
@@ -221,13 +413,12 @@ a:hover{
 
 #project1{
     background-image: url("../images/distributedworkflow.png");
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 150%;
     text-align: center;
-    border-radius: 50%;
     margin: auto;
     margin-top: 15px;
 
@@ -239,8 +430,8 @@ a:hover{
     white-space: pre; 
     color: white;
     display: block;
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     opacity: 1;
     padding-top: 16%;
     background: rgba(0,0,0,.7);
@@ -248,7 +439,6 @@ a:hover{
     -webkit-transition: all .5s;
     transition: all .5s;
     text-align: center;
-    border-radius: 50%;
 }
 
 #project2{
@@ -322,6 +512,7 @@ a:hover{
 
 
 .githublink a{
+    margin-top: 40px;
     color: black;
     text-align: center;
     border: 2px solid black;
@@ -431,6 +622,14 @@ footer .arrowkey{
     padding-bottom: 10px;  
 }
 
+.social_icon{
+    height: 24px;
+    width: 24px;
+}
+.social_top {
+    margin-top: 40px;
+}
+
 .icons{
     height: 64px;
     width: 64px;
@@ -463,5 +662,10 @@ w-100{
     height: 300px;
 }
 
+.about {
+    text-align: justify;
+    font-size: 16px;
+    opacity: 0.6;
+    margin-top: 20px;
+}
 
-*/
