@@ -1,584 +1,208 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Abhinav Karna | Developer </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhinav Karna</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <style>
-        body {
-            margin: 0;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-        #navbar {
-            overflow: hidden;
-            background-color: #333;
-            z-index: 99;
-        }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-        #navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+    h1 {
+      font-size: 3.5rem;
+    }
 
-        #navbar a.active {
-            background-color: #4CAF50;
-            color: white;
-        }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
 
-        .content {
-            padding: 16px;
-        }
+    p {
+      color: #aaa;
+    }
 
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+    }
 
-        .sticky+.content {
-            padding-top: 60px;
-        }
-    </style>
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero img {
+      width: 280px;
+      border-radius: 50%;
+      border: 3px solid #222;
+      box-shadow: 0 0 40px rgba(255,255,255,0.05);
+    }
+
+    /* CARDS */
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: #444;
+      transform: translateY(-6px);
+    }
+
+    /* PROJECT GRID */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    /* FADE ANIMATION */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a {
+      color: #4ea1ff;
+      text-decoration: none;
+    }
+
+    @media(max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <canvas class="canavs_container">
 
-    </canvas>
-    <div class="main_header" id="home">
-        <p>Hello, I'm <span class="name">Abhinav Karna.</span></p>
-        <p>I'm a Application Developer</p>
-        <a href="#about" class="work">View my work</a>
-    </div>
-    <!-- <nav class="navbar navbar-inverse" id="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#project">PROTFOLIO</a></li>
-                    <li><a href="#photograpgy">PHOTOGRAPHY</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-    <div class="content">
-        <div id="about">
-            <p class="about_tile">Looking for a Mobile/Web Developer ?</p>
-            <hr class="about_hr">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="hexagon">
-                <img class="fast_icon" src="images/fast_48.png">
-            </div>
-            <p class="fast_head"><strong>Fast</strong></p>
-            <p class="fast_dis">Fast load times and lag free interaction, my highest priority.</p>
-        </div>
-        <div class="col-sm-3">
-            <div class="hexagon">
-                <img class="res_icon" src="images/responsive_48.png">
-            </div>
-            <p class="fast_head"><strong>Responsive</strong></p>
-            <p class="fast_dis">My layouts will work on any device, big or small.</p>
-        </div>
-        <div class="col-sm-3">
-            <div class="hexagon">
-                <img class="int_icon" src="images/int_48.png">
-            </div>
-            <p class="fast_head"><strong>Intuitive</strong></p>
-            <p class="fast_dis">Strong preference for easy to use, intuitive UX/UI.</p>
-        </div>
-        <div class="col-sm-3">
-            <div class="hexagon">
-                <img class="dynamic_icon" src="images/dynamic_48.png">
-            </div>
-            <p class="fast_head"><strong>Dynamic</strong></p>
-            <p class="fast_dis">Websites don't have to be static, I love making pages come to life.</p>
-        </div>
-    </div>
-    <div class="row" id="home">
-        <div class="col-sm-5">
-            <div class="about_me">
-                <div class="profile_pic">
-                    <img class="dp" src="images/dp.jpg">
-                </div>
-
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="about_me">
-                <div class="about_me1">About me.</div>
-                <div class="about">Hi I am Abhinav Karna, a 26 year old application developer, and a photograbhy
-                    enthusiast living in Bangalore, India. I am a Computer Science Engineer, currently working with
-                    awesome folks at JP Morgan Chase & Co.</div>
-                <div class="about">I love travelling and I have YouTube chanel, where I post my travel videos. I am
-                    always excited to do connet with like minded people. lets discuss over coffee. </div>
-                <div class="social_top">
-                    <a href="https://www.instagram.com/avalanche557/" target="_blank"><span class="icons"><img
-                                class="social_icon" src="images/insta_color.png"></span></a>
-                    <a href="https://www.facebook.com/abhinav.karn.5" target="_blank"><span class="icons"><img
-                                class="social_icon" src="images/facebook_color.png"></span></a>
-                    <a href="https://www.youtube.com/channel/UCPlt1ycog5QLknhNB5XxiDQ" target="_blank"><span
-                            class="icons"><img class="social_icon" src="images/youtube_color.png"></span></a>
-                    <a href="https://github.com/avalanche557" target="_blank"><span class="icons"><img
-                                class="social_icon" src="images/github_color.png"></span></a>
-                    <a href="https://www.linkedin.com/in/avalanche557/" target="_blank"><span class="icons"><img
-                                class="social_icon" src="images/linkedin_color.png"></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="project">
-            <p class="project_title">Skills</p>
-            <hr class="skill_hr">
-        </div>
-        <div class="row">
-            <div class="skills_row_one">
-                <div class="skill_name">FRONTEND</div>
-                <div class="skill_name">JAVASCRIPT</div>
-                <div class="skill_name">TYPESCRIPT</div>
-                <div class="skill_name">REACTJS</div>
-                <div class="skill_name">REACT NATIVE</div>
-                <div class="skill_name">HTML</div>
-                <div class="skill_name">CSS</div>
-                <div class="skill_name">FIREBASE</div>
-            </div>
-            <!-- <div class="skills_row_two">
-                <div class="skill_name">BACKEND</div>
-                <div class="skill_name">PYTHON</div>
-                <div class="skill_name">TORNADO</div>
-                <div class="skill_name">NODEJS</div>
-                <div class="skill_name">EXPRESS</div>
-                <div class="skill_name">MONGODB</div>
-            </div> -->
-            <div class="skills_row_three">
-                <div class="skill_name">UI/UX DESIGN</div>
-                <div class="skill_name">FIGMA</div>
-                <div class="skill_name">PHOTOSHOP</div>
-                <div class="skill_name">LIGHTROOM</div>
-                <div class="skill_name">PREMIERE PRO</div>
-            </div>
-        </div>
-        <div class="project">
-            <a target="_blank" href="https://drive.google.com/file/d/19ye5XVT1rsjBnZdhUFDJ45cdXXCMl3PS/view?usp=sharing"
-                class="resume_download">
-                <p class="resume_button">Download my Resume</p>
-                <img src="images/resume.png" class="download_icon" />
-            </a>
-
-        </div>
-    </div>
-    <div class='project_row'>
-        <div class="project">
-            <p class="project_title">PROJECTS</p>
-            <hr class="project_hr">
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="book">
-                    <div class="info">
-                        <div class="info_inner">
-                            <div class="project_header">
-                                BlueWave
-                            </div>
-                            <div class="project_language">
-                                Node.js / Angular
-                            </div>
-                            <div class="learn_more_button">
-                                LEARN MORE
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="image">
-                        <img class="project_img" src="images/dashboard.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="book">
-                    <div class="info">
-                        <div class="info_inner">
-                            <div class="project_header">
-                                Chat Room
-                            </div>
-                            <div class="project_language">
-                                Node.js / React
-                            </div>
-                            <div class="learn_more_button">
-                                LEARN MORE
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="image">
-                        <img class="project_img" src="images/chat-room.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="book">
-                    <div class="info">
-                        <div class="info_inner">
-                            <div class="project_header">
-                                Covid-19 Tracker
-                            </div>
-                            <div class="project_language">
-                                React Native
-                            </div>
-                            <div class="learn_more_button">
-                                LEARN MORE
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="image">
-                        <img class="project_img" src="images/covid.png" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="book">
-                    <div class="info">
-                        <div class="info_inner">
-                            <div class="project_header">
-                                GitHub Search
-                            </div>
-                            <div class="project_language">
-                                React
-                            </div>
-                            <div class="learn_more_button">
-                                LEARN MORE
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="image">
-                        <img class="project_img" src="images/github_search.png" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="project githublink">
-                <a href="https://github.com/avalanche557" target="_blank">More Projects</a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div id="photograpgy"></div>
-        <div class="project">
-            <p class="project_title">Photograpgy</p>
-            <hr class="project_hr">
-            <div class="instagram_id">
-                <a class="instagram_id_div" href="https://www.instagram.com/avalanche557/">@avalanche557</a>
-            </div>
-        </div>
-        <div class="masonry-container">
-            <div class="masonry-item">
-                <img src="images/IMG-20181103-WA0003-01-min.jpeg" />
-            </div>
-
-            <div class="masonry-item">
-                <img src="images/IMG_20180702_182319-01-min.jpeg" />
-            </div>
-
-            <div class="masonry-item">
-                <img src="images/IMG_20180718_181448-01-min.jpg" />
-            </div>
-            <div class="masonry-item">
-                <img src="images/gokarna-min.jpg" />
-            </div>
-
-            <div class="masonry-item">
-                <img src="images/IMG_20180929_182606-01-min.jpeg" />
-            </div>
-
-            <div class="masonry-item">
-                <img src="images/IMG_20190210_155134-01-min.jpeg" />
-            </div>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Abhinav Karna</h1>
+      <p style="font-size: 1.2rem;">Senior Frontend Engineer</p>
+      <p style="margin-top: 15px;">
+        I build real-time, scalable web applications used in high-stakes environments.
+      </p>
     </div>
 
+    <img src="https://images.unsplash.com/photo-1603415526960-f8f0c3e9b6c4?w=400" alt="profile"/>
+  </section>
 
-    <div id="contact"></div>
-    <div class="contact">
-        <div class="project">
-            <p class="project_title">Contact</p>
-            <hr class="project_hr">
-        </div>
-        <div class="form_title">
-            Have a question or want to work together?
-        </div>
-        <form class="form" id="contact-form">
-            <input placeholder="Name" type="text" name="name" required>
-            <input placeholder="Enter email" type="email" name="email" required>
-            <textarea placeholder="Your Message" type="text" name="message"></textarea>
-            <input class="button" type="submit" id="submit" value=SUBMIT>
-        </form>
-    </div>
-    <footer>
-        <a href="#home"><img src="images/arrow.png" class="arrowkey"></a>
-        <div class="social">
-            <a href="https://www.instagram.com/avalanche557/" target="_blank"><span class="icons"><img
-                        src="images/insta.png"></span></a>
-            <a href="https://www.facebook.com/abhinav.karn.5" target="_blank"><span class="icons"><img
-                        src="images/facebook.png"></span></a>
-            <a href="https://www.youtube.com/channel/UCPlt1ycog5QLknhNB5XxiDQ" target="_blank"><span class="icons"><img
-                        src="images/youtube.png"></span></a>
-            <a href="https://github.com/avalanche557" target="_blank"><span class="icons"><img
-                        src="images/gitwhite.png"></span></a>
-            <a href="https://www.linkedin.com/in/avalanche557/" target="_blank"><span class="icons"><img
-                        src="images/linkedin.png"></span></a>
-        </div>
-        <div class="footer_note">
-            HAND CRAFTED BY ABHINAV KARNA
-        </div>
-    </footer>
+  <!-- EXPERIENCE -->
+  <section class="fade">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>💼 JP Morgan Chase & Co.</h3>
+      <p>Senior Associate (2019 - Present)</p>
+      <p>
+        Built a real-time notification system across trading apps with sub-second delivery.
+        Improved alert consistency by 70%.
+      </p>
     </div>
 
+    <div class="card">
+      <h3>🚗 Drivezy</h3>
+      <p>Application Developer</p>
+      <p>
+        Developed self-drive car rental platform with keyless entry,
+        reducing booking time by 50%.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="fade">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <div class="card project">
+        <img src="https://images.unsplash.com/photo-1640340434855-6084b1f4901c?w=800" />
+        <h3>GrowMny</h3>
+        <p>AI-powered micro-investment platform</p>
+      </div>
+
+      <div class="card project">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" />
+        <h3>Notification Framework</h3>
+        <p>Real-time alert system for trading dashboards</p>
+      </div>
 
     </div>
+  </section>
 
-    <script>
-        window.onscroll = function () { myFunction() };
+  <!-- CONTACT -->
+  <section class="fade">
+    <h2>Contact</h2>
+    <p>Email: abhinavkarn55@gmail.com</p>
+    <p>
+      LinkedIn:
+      <a href="https://linkedin.com/in/abhinavkarna" target="_blank">
+        linkedin.com/in/abhinavkarna
+      </a>
+    </p>
+  </section>
 
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
+  <!-- JS -->
+  <script>
+    const faders = document.querySelectorAll(".fade");
 
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         }
-    </script>
-    <script>
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $("a").on('click', function (event) {
+      });
+    });
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        });
-    </script>
-    <script>
-        const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
-            STAR_SIZE = 3,
-            STAR_MIN_SCALE = 0.2,
-            OVERFLOW_THRESHOLD = 50;
-
-        const canvas = document.querySelector('canvas'),
-            context = canvas.getContext('2d');
-
-        let scale = 1, // device pixel ratio
-            width,
-            height;
-
-        let stars = [];
-
-        let pointerX,
-            pointerY;
-
-        let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
-
-        let touchInput = false;
-
-        generate();
-        resize();
-        step();
-
-        window.onresize = resize;
-        document.onmouseleave = onMouseLeave;
-
-        function generate() {
-
-            for (let i = 0; i < STAR_COUNT; i++) {
-                stars.push({
-                    x: 0,
-                    y: 0,
-                    z: STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE)
-                });
-            }
-
-        }
-
-        function placeStar(star) {
-
-            star.x = Math.random() * width;
-            star.y = Math.random() * height;
-
-        }
-
-        function recycleStar(star) {
-
-            let direction = 'z';
-
-            let vx = Math.abs(velocity.x),
-                vy = Math.abs(velocity.y);
-
-            if (vx > 1 || vy > 1) {
-                let axis;
-
-                if (vx > vy) {
-                    axis = Math.random() < vx / (vx + vy) ? 'h' : 'v';
-                }
-                else {
-                    axis = Math.random() < vy / (vx + vy) ? 'v' : 'h';
-                }
-
-                if (axis === 'h') {
-                    direction = velocity.x > 0 ? 'l' : 'r';
-                }
-                else {
-                    direction = velocity.y > 0 ? 't' : 'b';
-                }
-            }
-
-            star.z = STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE);
-
-            if (direction === 'z') {
-                star.z = 0.1;
-                star.x = Math.random() * width;
-                star.y = Math.random() * height;
-            }
-            else if (direction === 'l') {
-                star.x = -OVERFLOW_THRESHOLD;
-                star.y = height * Math.random();
-            }
-            else if (direction === 'r') {
-                star.x = width + OVERFLOW_THRESHOLD;
-                star.y = height * Math.random();
-            }
-            else if (direction === 't') {
-                star.x = width * Math.random();
-                star.y = -OVERFLOW_THRESHOLD;
-            }
-            else if (direction === 'b') {
-                star.x = width * Math.random();
-                star.y = height + OVERFLOW_THRESHOLD;
-            }
-
-        }
-
-        function resize() {
-
-            scale = window.devicePixelRatio || 1;
-
-            width = window.innerWidth * scale;
-            height = window.innerHeight * scale;
-
-            canvas.width = width;
-            canvas.height = height;
-
-            stars.forEach(placeStar);
-
-        }
-
-        function step() {
-            context.clearRect(0, 0, width, height);
-            update();
-            render();
-            requestAnimationFrame(step);
-
-        }
-
-        function update() {
-
-            velocity.tx *= 0.96;
-            velocity.ty *= 0.96;
-
-            velocity.x += (velocity.tx - velocity.x) * 0.8;
-            velocity.y += (velocity.ty - velocity.y) * 0.8;
-
-            stars.forEach((star) => {
-                star.x += velocity.x * star.z;
-                star.y += velocity.y * star.z;
-                star.x += (star.x - width / 2) * velocity.z * star.z;
-                star.y += (star.y - height / 2) * velocity.z * star.z;
-                star.z += velocity.z;
-                // recycle when out of bounds
-                if (star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD) {
-                    recycleStar(star);
-                }
-
-            });
-
-        }
-        function render() {
-
-            stars.forEach((star) => {
-
-                context.beginPath();
-                context.lineCap = 'round';
-                context.lineWidth = STAR_SIZE * star.z * scale;
-                context.strokeStyle = 'rgba(255,255,255,' + (0.5 + 0.5 * Math.random()) + ')';
-
-                context.beginPath();
-                context.moveTo(star.x, star.y);
-
-                var tailX = velocity.x * 2,
-                    tailY = velocity.y * 2;
-
-                // stroke() wont work on an invisible line
-                if (Math.abs(tailX) < 0.1) tailX = 0.5;
-                if (Math.abs(tailY) < 0.1) tailY = 0.5;
-
-                context.lineTo(star.x + tailX, star.y + tailY);
-
-                context.stroke();
-
-            });
-
-        }
-    </script>
-
+    faders.forEach(el => observer.observe(el));
+  </script>
 
 </body>
-
 </html>
